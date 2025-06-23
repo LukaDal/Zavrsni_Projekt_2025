@@ -1,0 +1,4 @@
+These tests were conducted with a new finger design (see images).
+The finger has two magnets integrated within its first horizontal support.
+Magnetic sensor is fixed to the claw, below where the finger is mounted to the claw.
+The tests were conducted with sweep script (see claw_sweep_logger.py in mag_data_processing package).

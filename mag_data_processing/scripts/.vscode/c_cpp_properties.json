@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/one/include/**",
+        "/home/luka/catkin_ws/devel/include/**",
+        "/home/luka/catkin_ws/src/ZavrsniRad/dynamixel_packages/DynamixelSDK/dynamixel_sdk/include/**",
+        "/home/luka/catkin_ws/src/ZavrsniRad/dynamixel_packages/dynamixel_tester_01/include/**",
+        "/home/luka/catkin_ws/src/ZavrsniRad/dynamixel_packages/dynamixel-workbench/dynamixel_workbench_controllers/include/**",
+        "/home/luka/catkin_ws/src/ZavrsniRad/dynamixel_packages/dynamixel-workbench/dynamixel_workbench_operators/include/**",
+        "/home/luka/catkin_ws/src/ZavrsniRad/dynamixel_packages/dynamixel-workbench/dynamixel_workbench_toolbox/include/**",
+        "/home/luka/catkin_ws/src/ZavrsniRad/mag_data_processing/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
