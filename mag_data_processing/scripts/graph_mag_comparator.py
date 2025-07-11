@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
+# This code creates plots that compare data from two .csv files produced by claw_sweep_logger.py
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
-
 #--------------------------------------------------------------------------------------------------
 
-def graph(filepath1, filepath2, name1, name2):
+def plot_data(filepath1, filepath2, name1, name2):
 
     colors = [
         '#FF4C4C',  # bright red
@@ -16,31 +16,26 @@ def graph(filepath1, filepath2, name1, name2):
         '#00CC44',  # darker green
         '#4C9AFF',  # bright blue
         '#0047CC',  # darker blue
-
+        "#FFA600"   # orange/yellow
     ]
-    plottitle = (f"{name1} vs {name2}").upper()
 
     df1 = pd.read_csv(filepath1)
     df2 = pd.read_csv(filepath2)
 
-    plt.plot(df1['angle_dec'], df1[f'avg_x'], label=f'avg_x {name1}', color = colors[0], linewidth=1.8)
-    plt.plot(df2['angle_dec'], df2[f'avg_x'], label=f'avg_x {name2}', color = colors[1], linewidth=1.8)
+    plt.plot(df1['angle_dec'], df1[f'Bx'], label=f'Bx - {name1}', color = colors[0], linewidth = 2.4)
+    plt.plot(df2['angle_dec'], df2[f'Bx'], label=f'Bx - {name2}', color = colors[1], linewidth = 2.4)
 
-    plt.plot(df1['angle_dec'], df1[f'avg_y'], label=f'avg_y {name1}', color = colors[2], linewidth=1.8)
-    plt.plot(df2['angle_dec'], df2[f'avg_y'], label=f'avg_y {name2}', color = colors[3], linewidth=1.8)
+    plt.plot(df1['angle_dec'], df1[f'By'], label=f'By - {name1}', color = colors[2], linewidth = 2.4)
+    plt.plot(df2['angle_dec'], df2[f'By'], label=f'By - {name2}', color = colors[3], linewidth = 2.4)
 
-    plt.plot(df1['angle_dec'], df1[f'avg_z'], label=f'avg_z {name1}', color = colors[4], linewidth=1.8)
-    plt.plot(df2['angle_dec'], df2[f'avg_z'], label=f'avg_z {name2}', color = colors[5], linewidth=1.8)
+    plt.plot(df1['angle_dec'], df1[f'Bz'], label=f'Bz - {name1}', color = colors[4], linewidth = 2.4)
+    plt.plot(df2['angle_dec'], df2[f'Bz'], label=f'Bz - {name2}', color = colors[5], linewidth = 2.4)
 
-    plt.xlabel('Angle (dec)', fontsize=14)
-    plt.ylabel('Magnetic Field (uT)', fontsize=14)
-    plt.xticks(fontsize=12)
-    plt.yticks(fontsize=12)
-
-    plt.title(plottitle, fontsize=22)
-
-    plt.legend(fontsize=14)
-    
+    plt.xlabel('Kut (dec)', fontsize=18)
+    plt.ylabel('Gustoća magnetskog polja (µT)', fontsize=18) # In Croatian
+    plt.xticks(fontsize=15)
+    plt.yticks(fontsize=15)
+    plt.legend(fontsize=18)
     plt.grid(True)
     plt.axhline(0, color='black', linewidth=1.5)
 
@@ -52,9 +47,11 @@ def graph(filepath1, filepath2, name1, name2):
 
 if __name__ == "__main__":
 
-    name_1 = "empty"
-    name_2 = "triangle"
-    file_path_1 = f"/home/luka/catkin_ws/src/ZavrsniRad/tests/claw_tests_v2/test_18_empty/empty.csv"
-    file_path_2 = f"/home/luka/catkin_ws/src/ZavrsniRad/tests/claw_tests_v2/test_21_triangle/triangle.csv"
+    #-----CHANGE-PARAMETERS-HERE----------------- (TODO: Add these as some form of inputs insead of hardcoding)
+    name_1 = " "
+    name_2 = " "
+    file_path_1 = " "
+    file_path_2 = " "
+    #--------------------------------------------
 
-    graph(file_path_1, file_path_2, name_1, name_2)
+    plot_data(file_path_1, file_path_2, name_1, name_2)
